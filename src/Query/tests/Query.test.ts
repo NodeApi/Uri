@@ -35,6 +35,24 @@ describe('Query.ts tests', () => {
     expect(result[0].value).toBe('5');
   });
 
+  test('can get single params value', () => {
+    const query = new Query();
+    query.append('redirectUrl', 'none');
+    query.append('test', '5');
+    query.append('test', '43');
+    const result = query.getValue('redirectUrl');
+    expect(result).toBe('none');
+  });
+
+  test('can get multi params value', () => {
+    const query = new Query();
+    query.append('redirectUrl', 'none');
+    query.append('test', '5');
+    query.append('test', '43');
+    const result = query.getValue('test');
+    expect(result).toBe('5,43');
+  });
+
   test('can get all params', () => {
     const query = new Query();
     query.append('redirectUrl', 'none');

@@ -1,6 +1,8 @@
 import { IQueryParam } from './QueryParam';
 import { URLSearchParams } from 'url';
 
+// https://en.wikipedia.org/wiki/Query_string
+
 export class Query {
 
   private params: IQueryParam[] = [];
@@ -35,6 +37,12 @@ export class Query {
 
   public get(key: string): IQueryParam[] {
     return this.params.filter(param => param.key.toLowerCase() === key.toLowerCase());
+  }
+
+  public getValue(key: string): string {
+    const params = this.get(key);
+    const values = params.map(param => param.value);
+    return values.join(',');
   }
 
   public getAll(): IQueryParam[] {
