@@ -6,4 +6,8 @@ Work in progress!
 
 It is a wrapper over the outdated and non-intuitive Node.js api.
 
+## Documentation
+
+[@NodeApi/Uri Documentation](https://nodeapi.github.io/Uri/)
+
 ## Examples
