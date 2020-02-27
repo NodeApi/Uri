@@ -1,3 +1,4 @@
+/** @internal */
 export class LibError extends Error {
   constructor(
     message: string,

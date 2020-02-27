@@ -7,8 +7,19 @@ import { Query } from '../Query/Query';
 
 // https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
 
+/**
+ * Simple Uri abstraction based on https://en.wikipedia.org/wiki/Uniform_Resource_Identifier.
+ *
+ * It is a wrapper over the outdated and non-intuitive Node.js URL.
+ */
 export class Uri {
 
+  /**
+   * [[Uri]] constructor needs a correct uri string.
+   *
+   * @throws when uri is not a valid uri.
+   * @param uri uri string to be parsed
+   */
   constructor(uri: string) {
     if (!uri) {
       throw new LibError('Uri can\'t be empty', uri);
@@ -40,45 +51,73 @@ export class Uri {
     this.fragment = nativeUrl.hash;
   }
 
+  /**
+   * Create a full uri string.
+   */
   public get absoluteUri(): string {
     const auth = this.auth ? `${this.auth}@` : '';
     const fragment = this.fragment ? `#${this.fragment}` : '';
     return `${this.scheme}://${auth}${this.host}${this.path}${this.query.toString()}${fragment}`;
   }
 
+  /**
+   * Create a full uri string like [[absoluteUri]]
+   */
   public toString(): string {
     return this.absoluteUri;
   }
 
   private _scheme: Scheme;
+  /**
+   * Scheme part of the uri.
+   */
   public get scheme(): Scheme {
     return this._scheme;
   }
+  /**
+   * @throws when setting incorrect scheme.
+   */
   public set scheme(value: Scheme) {
     this.validateScheme(value);
     this._scheme = value;
   }
 
   private _auth: string | null;
+  /**
+   * Auth part of the uri.
+   *
+   * Can be 'username' or 'username:password'.
+   */
   public get auth(): string | null {
     return this._auth;
   }
-
+  /**
+   * @throws when setting incorrect auth.
+   */
   public set auth(value: string | null) {
     this.validateAuth(value);
     this._auth = value;
   }
 
   private _hostname: string;
+  /**
+   * Hostname part of the uri.
+   */
   public get hostname(): string {
     return this._hostname;
   }
+  /**
+   * @throws when setting empty
+   */
   public set hostname(value: string) {
     this.validateHostname(value);
     this._hostname = value;
   }
 
   private _port: number | null;
+  /**
+   * Port part of the uri.
+   */
   public get port(): number | null {
     return this._port;
   }
@@ -87,6 +126,15 @@ export class Uri {
     this._port = value;
   }
 
+  /**
+   * Host part of the uri.
+   *
+   * Host is the concatenation of [[hostname]] and [[port]].
+   *
+   * ```json
+   * "fake-domain.com:3001"
+   * ```
+   */
   public get host(): string {
     const port = this.port === null ? '' : `:${this.port}`;
     return `${this.hostname}${port}`;

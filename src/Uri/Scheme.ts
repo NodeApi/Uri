@@ -1,3 +1,6 @@
+/**
+ * Available http schemes
+ */
 export enum Scheme {
   Http = 'http',
   Https = 'https',

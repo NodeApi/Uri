@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "test": "jest --color"
+    "test": "jest --color",
+    "doc": "rm -rf docs && typedoc docs src --tsconfig tsconfig.json --excludePrivate --excludeNotExported --readme ./README.md --stripInternal --mode file -name \"@NodeApi/Uri\""
   },
   "author": "",
   "license": "MIT",
@@ -15,6 +16,7 @@
     "jest": "^25.1.0",
     "ts-jest": "^25.2.1",
     "tslint": "^6.0.0",
+    "typedoc": "^0.16.10",
     "typescript": "^3.8.2"
   },
   "dependencies": {
