@@ -52,7 +52,7 @@ export class Uri {
   }
 
   /**
-   * Create a full uri string.
+   * Get a full uri string.
    */
   public get absoluteUri(): string {
     const auth = this.auth ? `${this.auth}@` : '';
