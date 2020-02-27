@@ -8,7 +8,7 @@ describe('Uri scheme tests', () => {
     try {
       const uri = new Uri('test');
     } catch (err) {
-      expect(err.message).toBe('Uri must have a valid scheme. Received: [] Expected: [http,https,ftp,mailto,file,data,irc]');
+      expect(err.message).toBe('Uri must have a valid scheme. Received: [] Expected: [http,https]');
     }
   });
 
@@ -18,7 +18,7 @@ describe('Uri scheme tests', () => {
     try {
       uri.scheme = 'invalid' as any;
     } catch (err) {
-      expect(err.message).toBe('Uri must have a valid scheme. Received: [invalid] Expected: [http,https,ftp,mailto,file,data,irc]');
+      expect(err.message).toBe('Uri must have a valid scheme. Received: [invalid] Expected: [http,https]');
     }
   });
 

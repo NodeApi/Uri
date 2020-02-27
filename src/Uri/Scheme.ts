@@ -1,12 +1,14 @@
+// https://en.wikipedia.org/wiki/Uniform_Resource_Identifier#Examples
+
 /**
- * Available http schemes
+ * Available schemes
  */
 export enum Scheme {
   Http = 'http',
   Https = 'https',
-  Ftp = 'ftp',
-  Mailto = 'mailto',
-  File = 'file',
-  Data = 'data',
-  Irc = 'irc',
+  // Ftp = 'ftp',
+  // Mailto = 'mailto',
+  // File = 'file',
+  // Data = 'data',
+  // Irc = 'irc',
 }
