@@ -22,7 +22,7 @@ export class Uri extends RelativeUri {
    * @param uri uri string to be parsed
    */
   constructor(uri: string) {
-    super();
+    super(uri);
 
     if (!uri) {
       throw new LibError('Uri can\'t be empty', uri);
@@ -42,14 +42,6 @@ export class Uri extends RelativeUri {
     this._hostname = hostname;
 
     this.port = nativeUrl.port === null ? null : Number(nativeUrl.port);
-
-    const path = nativeUrl.pathname;
-    this.validatePath(path);
-    this.path = path;
-
-    this.query = Query.parse(nativeUrl.search || '');
-
-    this.fragment = nativeUrl.hash;
   }
 
   public static fromUri(uri: Uri, relativeUri: RelativeUri): Uri {

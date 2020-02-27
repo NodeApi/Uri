@@ -15,26 +15,15 @@ import { Query } from '../Query/Query';
 export class RelativeUri {
 
   /**
-   * Create empty relative uri
+   * Parse uri and retain relative part
+   * @param uri absolute or relative uri string to be parsed
    */
-  constructor() {
-    // TODO
-  }
-
-  /**
-   * Parse a relative uri string.
-   *
-   * @param uri uri string to be parsed
-   */
-  public static parse(uri: string): RelativeUri {
+  constructor(uri: string = '') {
     const nativeUrl = url.parse(uri);
-    const relativeUri = new RelativeUri();
 
-    relativeUri.path = nativeUrl.pathname || '';
-    relativeUri.query = Query.parse(nativeUrl.search || '');
-    relativeUri.fragment = nativeUrl.hash;
-
-    return relativeUri;
+    this.path = nativeUrl.pathname || '';
+    this.query = Query.parse(nativeUrl.search || '');
+    this.fragment = nativeUrl.hash;
   }
 
   /**

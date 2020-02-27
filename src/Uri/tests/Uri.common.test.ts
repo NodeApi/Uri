@@ -20,7 +20,8 @@ describe('Uri common tests', () => {
 
   test('can create from RelativeUri', () => {
     const uri = new Uri('http://test.com/');
-    const newUri = Uri.fromUri(uri, RelativeUri.parse('/user/15?sort=asc#test'));
+    const relativeUri = new RelativeUri('/user/15?sort=asc#test');
+    const newUri = Uri.fromUri(uri, relativeUri);
     expect(newUri.absoluteUri).toBe('http://test.com/user/15/?sort=asc#test');
     expect(newUri.toString()).toBe('http://test.com/user/15/?sort=asc#test');
   });

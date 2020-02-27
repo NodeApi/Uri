@@ -114,7 +114,6 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="relativeuri.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="relativeuri.html#validatepath" class="tsd-kind-icon">validate<wbr>Path</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="relativeuri.html#parse" class="tsd-kind-icon">parse</a></li>
 							</ul>
 						</section>
 					</div>
@@ -126,20 +125,31 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Relative<wbr>Uri<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="relativeuri.html" class="tsd-signature-type">RelativeUri</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Relative<wbr>Uri<span class="tsd-signature-symbol">(</span>uri<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="relativeuri.html" class="tsd-signature-type">RelativeUri</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/Uri/RelativeUri.ts:15</li>
+									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/f091d41/src/Uri/RelativeUri.ts#L15">src/Uri/RelativeUri.ts:15</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Create empty relative uri</p>
+									<p>Parse uri and retain relative part</p>
 								</div>
 							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> uri: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;&quot;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>absolute or relative uri string to be parsed</p>
+										</div>
+									</div>
+								</li>
+							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="relativeuri.html" class="tsd-signature-type">RelativeUri</a></h4>
 						</li>
 					</ul>
@@ -153,7 +163,7 @@
 					<div class="tsd-signature tsd-kind-icon">query<span class="tsd-signature-symbol">:</span> <a href="query.html" class="tsd-signature-type">Query</a><span class="tsd-signature-symbol"> = new Query()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in src/Uri/RelativeUri.ts:66</li>
+							<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/f091d41/src/Uri/RelativeUri.ts#L55">src/Uri/RelativeUri.ts:55</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -171,7 +181,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/Uri/RelativeUri.ts:69</li>
+									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/f091d41/src/Uri/RelativeUri.ts#L58">src/Uri/RelativeUri.ts:58</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
@@ -179,7 +189,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/Uri/RelativeUri.ts:72</li>
+									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/f091d41/src/Uri/RelativeUri.ts#L61">src/Uri/RelativeUri.ts:61</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -203,7 +213,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/Uri/RelativeUri.ts:56</li>
+									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/f091d41/src/Uri/RelativeUri.ts#L45">src/Uri/RelativeUri.ts:45</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -211,7 +221,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/Uri/RelativeUri.ts:59</li>
+									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/f091d41/src/Uri/RelativeUri.ts#L48">src/Uri/RelativeUri.ts:48</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -234,7 +244,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/Uri/RelativeUri.ts:43</li>
+									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/f091d41/src/Uri/RelativeUri.ts#L32">src/Uri/RelativeUri.ts:32</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -259,7 +269,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/Uri/RelativeUri.ts:51</li>
+									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/f091d41/src/Uri/RelativeUri.ts#L40">src/Uri/RelativeUri.ts:40</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -281,7 +291,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/Uri/RelativeUri.ts:76</li>
+									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/f091d41/src/Uri/RelativeUri.ts#L65">src/Uri/RelativeUri.ts:65</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -291,37 +301,6 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">asserts</span><span class="tsd-signature-type">path</span><span class="tsd-signature-symbol"> is </span><span class="tsd-signature-type">string</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="parse" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> parse</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">parse<span class="tsd-signature-symbol">(</span>uri<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="relativeuri.html" class="tsd-signature-type">RelativeUri</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in src/Uri/RelativeUri.ts:29</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Parse a relative uri string.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>uri: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>uri string to be parsed</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="relativeuri.html" class="tsd-signature-type">RelativeUri</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -368,9 +347,6 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
 								<a href="relativeuri.html#validatepath" class="tsd-kind-icon">validate<wbr>Path</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="relativeuri.html#parse" class="tsd-kind-icon">parse</a>
 							</li>
 						</ul>
 					</li>
