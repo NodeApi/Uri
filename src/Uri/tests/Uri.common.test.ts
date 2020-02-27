@@ -18,12 +18,13 @@ describe('Uri common tests', () => {
     expect(uri.toString()).toBe('http://test.com/?name=bond&firstName=James');
   });
 
-  test('can create from RelativeUri', () => {
-    const uri = new Uri('http://test.com/');
-    const relativeUri = new RelativeUri('/user/15?sort=asc#test');
-    const newUri = Uri.fromUri(uri, relativeUri);
-    expect(newUri.absoluteUri).toBe('http://test.com/user/15/?sort=asc#test');
-    expect(newUri.toString()).toBe('http://test.com/user/15/?sort=asc#test');
+  test('can merge path and query with a relative uri', () => {
+    const uri = new Uri('http://test.com/users/?limit=10');
+    const relativeUri = new RelativeUri('/15/?sort=asc');
+    const newUri = Uri.merge(uri, relativeUri);
+    expect(newUri.relativeUri).toBe('/users/15/?limit=10&sort=asc');
+    expect(newUri.absoluteUri).toBe('http://test.com/users/15/?limit=10&sort=asc');
+    expect(newUri.toString()).toBe('http://test.com/users/15/?limit=10&sort=asc');
   });
 
 });

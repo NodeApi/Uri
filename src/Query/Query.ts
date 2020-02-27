@@ -25,6 +25,26 @@ export class Query {
   }
 
   /**
+   * Create new [[Query]] object from 2 queries.
+   *
+   * ```typescript
+   * const q1 = new Query('k1=val1&k2=val2');
+   * const q2 = new Query('k3=val3&k1=val5');
+   * const query = Query.merge(q1, q2);
+   * query.toString(); // ?k1=val1&k2=val2&k3=val3&k1=val5'
+   * ```
+   * @param query1 first query
+   * @param query2 second query
+   */
+  public static merge(query1: Query, query2: Query): Query {
+    const query = new Query();
+    [...query1.getAll(), ...query2.getAll()].forEach(param => {
+      query.append(param.key, param.value);
+    });
+    return query;
+  }
+
+  /**
    * Append a new param to the query.
    *
    * The difference between [[set]] is that [[append]]

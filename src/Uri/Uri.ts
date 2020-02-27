@@ -44,10 +44,23 @@ export class Uri extends RelativeUri {
     this.port = nativeUrl.port === null ? null : Number(nativeUrl.port);
   }
 
-  public static fromUri(uri: Uri, relativeUri: RelativeUri): Uri {
+  /**
+   * Create new [[Uri]] object with joined path and query params.
+   *
+   * @warning The fragment is taken from the relativeUri!
+   * ```typescript
+   * const uri = new Uri('http://host.com/users?k1=v1#oldFragment');
+   * const relativeUri = new RelativeUri('/15?k2=v2#newFragment');
+   * const newUri = Uri.merge(uri, relativeUri);
+   * newUri.toString(); // http://host.com/users/15/?k1=v1&k2=v2#newFragment
+   * ```
+   * @param uri absolute uri
+   * @param relativeUri relative uri
+   */
+  public static merge(uri: Uri, relativeUri: RelativeUri): Uri {
     const newUri = new Uri(uri.toString());
-    newUri.path = relativeUri.path;
-    newUri.query = new Query(relativeUri.query.toString());
+    newUri.path = trimEnd(uri.path, '/') + relativeUri.path;
+    newUri.query = Query.merge(uri.query, relativeUri.query);
     newUri.fragment = relativeUri.fragment;
     return newUri;
   }

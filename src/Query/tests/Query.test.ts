@@ -120,4 +120,12 @@ describe('Query.ts tests', () => {
     const result = new Query('key1=value1&key2=value2');
     expect(result.toString()).toBe('?key1=value1&key2=value2');
   });
+
+  test('can merge 2 queries', () => {
+    const q1 = new Query('key1=value1&key2=value2');
+    const q2 = new Query('key3=value3&key1=value5');
+    const query = Query.merge(q1, q2);
+    expect(query.toString()).toBe('?key1=value1&key2=value2&key3=value3&key1=value5');
+  });
+
 });
