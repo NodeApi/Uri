@@ -101,7 +101,6 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="query.html#keys" class="tsd-kind-icon">keys</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="query.html#set" class="tsd-kind-icon">set</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="query.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="query.html#parse" class="tsd-kind-icon">parse</a></li>
 							</ul>
 						</section>
 					</div>
@@ -113,15 +112,31 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Query<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="query.html" class="tsd-signature-type">Query</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Query<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="query.html" class="tsd-signature-type">Query</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/108d581/src/Query/Query.ts#L13">src/Query/Query.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/3a3542f/src/Query/Query.ts#L13">src/Query/Query.ts:13</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Create empty <a href="query.html">Query</a> or parse from a string.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> str: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;&quot;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>uri string to be parsed</p>
+										</div>
+									</div>
+								</li>
+							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="query.html" class="tsd-signature-type">Query</a></h4>
 						</li>
 					</ul>
@@ -139,7 +154,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/108d581/src/Query/Query.ts#L49">src/Query/Query.ts:49</a></li>
+									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/3a3542f/src/Query/Query.ts#L43">src/Query/Query.ts:43</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -182,7 +197,7 @@ query.getValue(<span class="hljs-string">'tag'</span>); <span class="hljs-commen
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/108d581/src/Query/Query.ts#L119">src/Query/Query.ts:119</a></li>
+									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/3a3542f/src/Query/Query.ts#L113">src/Query/Query.ts:113</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -213,7 +228,7 @@ query.getValue(<span class="hljs-string">'tag'</span>); <span class="hljs-commen
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/108d581/src/Query/Query.ts#L87">src/Query/Query.ts:87</a></li>
+									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/3a3542f/src/Query/Query.ts#L81">src/Query/Query.ts:81</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -244,7 +259,7 @@ query.getValue(<span class="hljs-string">'tag'</span>); <span class="hljs-commen
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/108d581/src/Query/Query.ts#L111">src/Query/Query.ts:111</a></li>
+									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/3a3542f/src/Query/Query.ts#L105">src/Query/Query.ts:105</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -266,7 +281,7 @@ query.getValue(<span class="hljs-string">'tag'</span>); <span class="hljs-commen
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/108d581/src/Query/Query.ts#L102">src/Query/Query.ts:102</a></li>
+									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/3a3542f/src/Query/Query.ts#L96">src/Query/Query.ts:96</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -301,7 +316,7 @@ query.getValue(<span class="hljs-string">'key1'</span>); <span class="hljs-comme
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/108d581/src/Query/Query.ts#L77">src/Query/Query.ts:77</a></li>
+									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/3a3542f/src/Query/Query.ts#L71">src/Query/Query.ts:71</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -323,7 +338,7 @@ query.getValue(<span class="hljs-string">'key1'</span>); <span class="hljs-comme
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/108d581/src/Query/Query.ts#L69">src/Query/Query.ts:69</a></li>
+									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/3a3542f/src/Query/Query.ts#L63">src/Query/Query.ts:63</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -366,7 +381,7 @@ query.getValue(<span class="hljs-string">'tag'</span>); <span class="hljs-commen
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/108d581/src/Query/Query.ts#L133">src/Query/Query.ts:133</a></li>
+									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/3a3542f/src/Query/Query.ts#L127">src/Query/Query.ts:127</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -379,37 +394,6 @@ query.set(<span class="hljs-string">'key&gt;2'</span>, <span class="hljs-string"
 query.toString(); <span class="hljs-comment">// '?key1=value1&amp;key%3E2=value%3E2'</span></code></pre>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="parse" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> parse</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">parse<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="query.html" class="tsd-signature-type">Query</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/108d581/src/Query/Query.ts#L24">src/Query/Query.ts:24</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Create <a href="query.html">Query</a> from a string.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>str: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>uri string to be parsed</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="query.html" class="tsd-signature-type">Query</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -459,9 +443,6 @@ query.toString(); <span class="hljs-comment">// '?key1=value1&amp;key%3E2=value%
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="query.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="query.html#parse" class="tsd-kind-icon">parse</a>
 							</li>
 						</ul>
 					</li>

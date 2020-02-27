@@ -12,22 +12,16 @@ export class Query {
 
   private params: IQueryParam[] = [];
 
-  constructor() {
-    // TODO
-  }
-
   /**
-   * Create [[Query]] from a string.
+   * Create empty [[Query]] or parse from a string.
    *
    * @param str uri string to be parsed
    */
-  public static parse(str: string): Query {
-    const query = new Query();
+  constructor(str: string = '') {
     const params = new URLSearchParams(str);
     Array.from(params.entries()).forEach(([key, value]) => {
-      query.append(key, value);
+      this.append(key, value);
     });
-    return query;
   }
 
   /**

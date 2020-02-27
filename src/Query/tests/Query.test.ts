@@ -77,7 +77,7 @@ describe('Query.ts tests', () => {
   });
 
   test('can parse empty string', () => {
-    const result = Query.parse('');
+    const result = new Query('');
     expect(result.toString()).toBe('');
   });
 
@@ -99,7 +99,7 @@ describe('Query.ts tests', () => {
     query.append('test', '5');
     query.append('test', '43');
     const result = query.keys();
-    expect(result).toHaveLength(2); // TODO should be uniq
+    expect(result).toHaveLength(2);
     expect(result[0]).toBe('redirectUrl');
     expect(result[1]).toBe('test');
   });
@@ -112,12 +112,12 @@ describe('Query.ts tests', () => {
   });
 
   test('can parse query', () => {
-    const result = Query.parse('?test=test&name=James&test=5');
+    const result = new Query('?test=test&name=James&test=5');
     expect(result.toString()).toBe('?test=test&name=James&test=5');
   });
 
   test('can parse query without ?', () => {
-    const result = Query.parse('key1=value1&key2=value2');
+    const result = new Query('key1=value1&key2=value2');
     expect(result.toString()).toBe('?key1=value1&key2=value2');
   });
 });

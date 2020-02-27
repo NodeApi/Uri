@@ -47,7 +47,7 @@ export class Uri extends RelativeUri {
   public static fromUri(uri: Uri, relativeUri: RelativeUri): Uri {
     const newUri = new Uri(uri.toString());
     newUri.path = relativeUri.path;
-    newUri.query = Query.parse(relativeUri.query.toString());
+    newUri.query = new Query(relativeUri.query.toString());
     newUri.fragment = relativeUri.fragment;
     return newUri;
   }

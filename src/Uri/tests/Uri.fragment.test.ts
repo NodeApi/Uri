@@ -29,6 +29,13 @@ describe('Uri fragment tests', () => {
     expect(uri.fragment).toBe('api');
   });
 
+  test('should url encode fragment', () => {
+    const uri = new Uri('http://test.com');
+    uri.fragment = 'tes<>t';
+    expect(uri.fragment).toBe('tes%3C%3Et');
+    expect(uri.relativeUri).toBe('/#tes%3C%3Et');
+  });
+
   test('should startTrim # when setting', () => {
     const uri = new Uri('http://test.com/?name=bond&firstName=James');
     uri.fragment = '#api';

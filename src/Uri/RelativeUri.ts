@@ -22,7 +22,7 @@ export class RelativeUri {
     const nativeUrl = url.parse(uri);
 
     this.path = nativeUrl.pathname || '';
-    this.query = Query.parse(nativeUrl.search || '');
+    this.query = new Query(nativeUrl.search || '');
     this.fragment = nativeUrl.hash;
   }
 
