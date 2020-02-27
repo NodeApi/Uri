@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "test": "jest --color",
-    "doc": "rm -rf docs && typedoc docs src --tsconfig tsconfig.json --excludePrivate --excludeNotExported --readme ./README.md --stripInternal --mode file -name \"@NodeApi/Uri\""
+    "doc": "rm -rf docs && typedoc --options typedoc.json"
   },
   "author": "",
   "license": "MIT",

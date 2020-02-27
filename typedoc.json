@@ -1,0 +1,13 @@
+{
+  "out": "docs",
+  "inputFiles": [
+    "./src"
+  ],
+  "tsconfig": "tsconfig.json",
+  "excludePrivate": true,
+  "excludeNotExported": true,
+  "readme": "./README.md",
+  "stripInternal": true,
+  "mode": "file",
+  "name": "@NodeApi/Uri"
+}
