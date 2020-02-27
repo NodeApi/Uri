@@ -5,6 +5,7 @@
   ],
   "tsconfig": "tsconfig.json",
   "excludePrivate": true,
+  "excludeProtected": true,
   "excludeNotExported": true,
   "readme": "./README.md",
   "stripInternal": true,
