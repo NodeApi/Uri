@@ -4,6 +4,7 @@ import { isEnum } from '../temp/isKeyOfEnum';
 import { trimEnd, trim, trimStart } from '../temp/trimEnd';
 import { LibError } from '../temp/LibError';
 import { Query } from '../Query/Query';
+import { RelativeUri } from './RelativeUri';
 
 // https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
 
@@ -12,15 +13,17 @@ import { Query } from '../Query/Query';
  *
  * It is a wrapper over the outdated and non-intuitive Node.js URL.
  */
-export class Uri {
+export class Uri extends RelativeUri {
 
   /**
-   * [[Uri]] constructor needs a correct uri string.
+   * [[Uri]] needs an absolute uri.
    *
    * @throws when uri is not a valid uri.
    * @param uri uri string to be parsed
    */
   constructor(uri: string) {
+    super();
+
     if (!uri) {
       throw new LibError('Uri can\'t be empty', uri);
     }
@@ -38,9 +41,7 @@ export class Uri {
     this.validateHostname(hostname);
     this._hostname = hostname;
 
-    const port = nativeUrl.port === null ? null : Number(nativeUrl.port);
-    this.validatePort(port);
-    this._port = port;
+    this.port = nativeUrl.port === null ? null : Number(nativeUrl.port);
 
     const path = nativeUrl.pathname;
     this.validatePath(path);
@@ -51,13 +52,20 @@ export class Uri {
     this.fragment = nativeUrl.hash;
   }
 
+  public static fromUri(uri: Uri, relativeUri: RelativeUri): Uri {
+    const newUri = new Uri(uri.toString());
+    newUri.path = relativeUri.path;
+    newUri.query = Query.parse(relativeUri.query.toString());
+    newUri.fragment = relativeUri.fragment;
+    return newUri;
+  }
+
   /**
    * Get a full uri string.
    */
   public get absoluteUri(): string {
     const auth = this.auth ? `${this.auth}@` : '';
-    const fragment = this.fragment ? `#${this.fragment}` : '';
-    return `${this.scheme}://${auth}${this.host}${this.path}${this.query.toString()}${fragment}`;
+    return `${this.scheme}://${auth}${this.host}${this.relativeUri}`;
   }
 
   /**
@@ -67,7 +75,7 @@ export class Uri {
     return this.absoluteUri;
   }
 
-  private _scheme: Scheme;
+  private _scheme: Scheme = Scheme.Http;
   /**
    * Scheme part of the uri.
    */
@@ -82,7 +90,7 @@ export class Uri {
     this._scheme = value;
   }
 
-  private _auth: string | null;
+  private _auth: string | null = null;
   /**
    * Auth part of the uri.
    *
@@ -99,7 +107,7 @@ export class Uri {
     this._auth = value;
   }
 
-  private _hostname: string;
+  private _hostname: string = '';
   /**
    * Hostname part of the uri.
    */
@@ -114,7 +122,7 @@ export class Uri {
     this._hostname = value;
   }
 
-  private _port: number | null;
+  private _port: number | null = 8080;
   /**
    * Port part of the uri.
    */
@@ -138,27 +146,6 @@ export class Uri {
   public get host(): string {
     const port = this.port === null ? '' : `:${this.port}`;
     return `${this.hostname}${port}`;
-  }
-
-  private _path: string = '/';
-  public get path(): string {
-    return this._path;
-  }
-  public set path(value: string) {
-    const trimmed = trim(value, '/');
-    const path = !trimmed.length ? '/' : `/${trimmed}/`;
-    this.validatePath(path);
-    this._path = path;
-  }
-
-  public query: Query = new Query();
-
-  private _fragment: string | null = null;
-  public get fragment(): string | null {
-    return this._fragment;
-  }
-  public set fragment(value: string | null) {
-    this._fragment = value === null ? null : trimStart(value, '#');
   }
 
   private validateScheme(scheme: string | null): asserts scheme is Scheme {
@@ -194,12 +181,6 @@ export class Uri {
 
     if (!Number.isInteger(port)) {
       throw new LibError('Port must be an integer', port.toString());
-    }
-  }
-
-  private validatePath(path: string | null): asserts path is string {
-    if (!path) {
-      throw new LibError('Path cannot be empty', path);
     }
   }
 }

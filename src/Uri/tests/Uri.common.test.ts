@@ -1,5 +1,5 @@
 import { Uri } from '../Uri';
-import url from 'url';
+import { RelativeUri } from '../RelativeUri';
 
 describe('Uri common tests', () => {
 
@@ -16,6 +16,13 @@ describe('Uri common tests', () => {
     const uri = new Uri('http://test.com/?name=bond&firstName=James');
     expect(uri.absoluteUri).toBe('http://test.com/?name=bond&firstName=James');
     expect(uri.toString()).toBe('http://test.com/?name=bond&firstName=James');
+  });
+
+  test('can create from RelativeUri', () => {
+    const uri = new Uri('http://test.com/');
+    const newUri = Uri.fromUri(uri, RelativeUri.parse('/user/15?sort=asc#test'));
+    expect(newUri.absoluteUri).toBe('http://test.com/user/15/?sort=asc#test');
+    expect(newUri.toString()).toBe('http://test.com/user/15/?sort=asc#test');
   });
 
 });
