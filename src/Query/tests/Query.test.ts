@@ -128,4 +128,12 @@ describe('Query.ts tests', () => {
     expect(query.toString()).toBe('?key1=value1&key2=value2&key3=value3&key1=value5');
   });
 
+  test('can clear all params', () => {
+    const query = new Query('?redirectUrl=none&test=5&test=43');
+    query.clear();
+    expect(query.toString()).toBe('');
+    query.append('key', 'value');
+    expect(query.toString()).toBe('?key=value');
+  });
+
 });

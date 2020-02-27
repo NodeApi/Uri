@@ -135,6 +135,15 @@ export class Query {
   }
 
   /**
+   * Delete all params.
+   *
+   * The query will be empty.
+   */
+  public clear(): void {
+    this.params = [];
+  }
+
+  /**
    * Get urlEncoded query string
    *
    * ```typescript
