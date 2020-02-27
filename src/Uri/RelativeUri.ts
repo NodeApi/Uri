@@ -42,6 +42,9 @@ export class RelativeUri {
   }
 
   private _path: string = '/';
+  /**
+   * Path part of the uri.
+   */
   public get path(): string {
     return this._path;
   }
@@ -52,11 +55,26 @@ export class RelativeUri {
     this._path = path;
   }
 
+  /**
+   * Query part of the uri.
+   */
   public query: Query = new Query();
 
   private _fragment: string | null = null;
+  /**
+   * Fragment part of the uri (url encoded).
+   *
+   * ```typescript
+   * const uri = new Uri('http://fakedomain.com/path');
+   * uri.fragment = 'test';
+   * uri.toString(); // http://fakedomain.com/path/#test
+   * // or
+   * uri.fragment = '#test';
+   * uri.toString(); // http://fakedomain.com/path/#test
+   * ```
+   */
   public get fragment(): string | null {
-    return this._fragment;
+    return this._fragment ? encodeURI(this._fragment) : null;
   }
   public set fragment(value: string | null) {
     this._fragment = value === null ? null : trimStart(value, '#');

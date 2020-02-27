@@ -14,7 +14,7 @@ describe('Uri fragment tests', () => {
 
   test('can be empty', () => {
     const uri = new Uri('http://test.com/?name=bond&firstName=James#');
-    expect(uri.fragment).toBe('');
+    expect(uri.fragment).toBe(null);
   });
 
   test('can set as null', () => {

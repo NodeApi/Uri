@@ -131,7 +131,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/9992765/src/Uri/RelativeUri.ts#L15">src/Uri/RelativeUri.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/108d581/src/Uri/RelativeUri.ts#L15">src/Uri/RelativeUri.ts:15</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -163,9 +163,14 @@
 					<div class="tsd-signature tsd-kind-icon">query<span class="tsd-signature-symbol">:</span> <a href="query.html" class="tsd-signature-type">Query</a><span class="tsd-signature-symbol"> = new Query()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/9992765/src/Uri/RelativeUri.ts#L55">src/Uri/RelativeUri.ts:55</a></li>
+							<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/108d581/src/Uri/RelativeUri.ts#L61">src/Uri/RelativeUri.ts:61</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Query part of the uri.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -181,17 +186,39 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/9992765/src/Uri/RelativeUri.ts#L58">src/Uri/RelativeUri.ts:58</a></li>
+									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/108d581/src/Uri/RelativeUri.ts#L76">src/Uri/RelativeUri.ts:76</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Fragment part of the uri (url encoded).</p>
+								</div>
+								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> uri = <span class="hljs-keyword">new</span> Uri(<span class="hljs-string">'http://fakedomain.com/path'</span>);
+uri.fragment = <span class="hljs-string">'test'</span>;
+uri.toString(); <span class="hljs-comment">// http://fakedomain.com/path/#test</span>
+<span class="hljs-comment">// or</span>
+uri.fragment = <span class="hljs-string">'#test'</span>;
+uri.toString(); <span class="hljs-comment">// http://fakedomain.com/path/#test</span></code></pre>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/9992765/src/Uri/RelativeUri.ts#L61">src/Uri/RelativeUri.ts:61</a></li>
+									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/108d581/src/Uri/RelativeUri.ts#L79">src/Uri/RelativeUri.ts:79</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Fragment part of the uri (url encoded).</p>
+								</div>
+								<pre><code class="language-typescript"><span class="hljs-keyword">const</span> uri = <span class="hljs-keyword">new</span> Uri(<span class="hljs-string">'http://fakedomain.com/path'</span>);
+uri.fragment = <span class="hljs-string">'test'</span>;
+uri.toString(); <span class="hljs-comment">// http://fakedomain.com/path/#test</span>
+<span class="hljs-comment">// or</span>
+uri.fragment = <span class="hljs-string">'#test'</span>;
+uri.toString(); <span class="hljs-comment">// http://fakedomain.com/path/#test</span></code></pre>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -213,17 +240,27 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/9992765/src/Uri/RelativeUri.ts#L45">src/Uri/RelativeUri.ts:45</a></li>
+									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/108d581/src/Uri/RelativeUri.ts#L48">src/Uri/RelativeUri.ts:48</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Path part of the uri.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/9992765/src/Uri/RelativeUri.ts#L48">src/Uri/RelativeUri.ts:48</a></li>
+									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/108d581/src/Uri/RelativeUri.ts#L51">src/Uri/RelativeUri.ts:51</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Path part of the uri.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -244,7 +281,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/9992765/src/Uri/RelativeUri.ts#L32">src/Uri/RelativeUri.ts:32</a></li>
+									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/108d581/src/Uri/RelativeUri.ts#L32">src/Uri/RelativeUri.ts:32</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -269,7 +306,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/9992765/src/Uri/RelativeUri.ts#L40">src/Uri/RelativeUri.ts:40</a></li>
+									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/108d581/src/Uri/RelativeUri.ts#L40">src/Uri/RelativeUri.ts:40</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -291,7 +328,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/9992765/src/Uri/RelativeUri.ts#L65">src/Uri/RelativeUri.ts:65</a></li>
+									<li>Defined in <a href="https://github.com/NodeApi/Uri/blob/108d581/src/Uri/RelativeUri.ts#L83">src/Uri/RelativeUri.ts:83</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
